@@ -6,10 +6,10 @@ const RESERVE = 'travelers/rockets/RESERVE';
 const CANCEL_RESERVE = 'travelers/rockets/CANCEL_RESERVE';
 const initialState = [];
 
-export const getRockets = () => async (dispatch) => {
-  const { data } = await axios.get(url);
-  dispatch({ type: GET_ROCKETS, payload: data });
-};
+export const rockets = (payload) => ({
+  type: GET_ROCKETS,
+  payload,
+});
 
 export const reserve = (id) => ({
   type: RESERVE,
@@ -20,6 +20,11 @@ export const cancelReserve = (id) => ({
   type: CANCEL_RESERVE,
   payload: id,
 });
+
+export const getRockets = () => async (dispatch) => {
+  const { data } = await axios.get(url);
+  dispatch(rockets(data));
+};
 
 const reducer = (state = initialState, action) => {
   const { type, payload } = action;

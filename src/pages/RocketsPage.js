@@ -7,7 +7,9 @@ const RocketsPage = () => {
   const rockets = useSelector((state) => state.rockets);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getRockets());
+    if (rockets.length === 0) {
+      dispatch(getRockets());
+    }
   }, []);
   const reserveRockect = (id) => {
     dispatch(reserve(id));
