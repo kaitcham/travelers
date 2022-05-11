@@ -1,8 +1,9 @@
 import React from 'react';
+// import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
-const Rocket = ({ rocket }) => {
-  const { description } = rocket;
+const Rocket = ({ rocket, reserveRockect }) => {
+  const { id, description, reserved } = rocket;
   return (
     <div className="rocket">
       <div className="rocket-img">
@@ -11,7 +12,15 @@ const Rocket = ({ rocket }) => {
       <div className="rocket-desc">
         <h2>{rocket.rocket_name}</h2>
         <p>{description}</p>
-        <button type="button">Reserve Rocket</button>
+        {!reserved ? (
+          <button type="button" onClick={() => reserveRockect(id)}>
+            Reserve Rocket
+          </button>
+        ) : (
+          <button type="button" onClick={() => reserveRockect(id)}>
+            Cancel Reservation
+          </button>
+        )}
       </div>
     </div>
   );
@@ -19,10 +28,13 @@ const Rocket = ({ rocket }) => {
 
 Rocket.propTypes = {
   rocket: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    reserved: PropTypes.bool,
     rocket_name: PropTypes.string.isRequired,
     flickr_images: PropTypes.arrayOf(PropTypes.any.isRequired).isRequired,
     description: PropTypes.string.isRequired,
   }).isRequired,
+  reserveRockect: PropTypes.func.isRequired,
 };
 
 export default Rocket;

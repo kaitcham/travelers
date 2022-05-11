@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getRockets } from '../redux/rockets/rockets';
+import { getRockets, reserve } from '../redux/rockets/rockets';
 import Rocket from '../components/Rocket';
 
 const RocketsPage = () => {
@@ -9,10 +9,18 @@ const RocketsPage = () => {
   useEffect(() => {
     dispatch(getRockets());
   }, []);
+  const reserveRockect = (id) => {
+    dispatch(reserve(id));
+  };
+
   return (
     <div className="rockets">
       {rockets.map((rocket) => (
-        <Rocket key={rocket.id} rocket={rocket} />
+        <Rocket
+          key={rocket.id}
+          rocket={rocket}
+          reserveRockect={reserveRockect}
+        />
       ))}
     </div>
   );
