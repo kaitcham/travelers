@@ -2,7 +2,7 @@ import React from 'react';
 // import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
-const Rocket = ({ rocket, reserveRockect }) => {
+const Rocket = ({ rocket, reserveRockect, cancelReservedRockect }) => {
   const { id, description, reserved } = rocket;
   return (
     <div className="rocket">
@@ -13,11 +13,19 @@ const Rocket = ({ rocket, reserveRockect }) => {
         <h2>{rocket.rocket_name}</h2>
         <p>{description}</p>
         {!reserved ? (
-          <button type="button" onClick={() => reserveRockect(id)}>
+          <button
+            className="reserve"
+            type="button"
+            onClick={() => reserveRockect(id)}
+          >
             Reserve Rocket
           </button>
         ) : (
-          <button type="button" onClick={() => reserveRockect(id)}>
+          <button
+            type="button"
+            className="cancel-reserve"
+            onClick={() => cancelReservedRockect(id)}
+          >
             Cancel Reservation
           </button>
         )}
@@ -35,6 +43,7 @@ Rocket.propTypes = {
     description: PropTypes.string.isRequired,
   }).isRequired,
   reserveRockect: PropTypes.func.isRequired,
+  cancelReservedRockect: PropTypes.func.isRequired,
 };
 
 export default Rocket;
