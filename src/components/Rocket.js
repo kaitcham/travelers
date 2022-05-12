@@ -11,23 +11,31 @@ const Rocket = ({ rocket, reserveRockect, cancelReservedRockect }) => {
       </div>
       <div className="rocket-desc">
         <h2>{rocket.rocket_name}</h2>
-        <p>{description}</p>
         {!reserved ? (
-          <button
-            className="reserve"
-            type="button"
-            onClick={() => reserveRockect(id)}
-          >
-            Reserve Rocket
-          </button>
+          <>
+            <p>{description}</p>
+            <button
+              className="reserve"
+              type="button"
+              onClick={() => reserveRockect(id)}
+            >
+              Reserve Rocket
+            </button>
+          </>
         ) : (
-          <button
-            type="button"
-            className="cancel-reserve"
-            onClick={() => cancelReservedRockect(id)}
-          >
-            Cancel Reservation
-          </button>
+          <>
+            <p>
+              <span>Reserved</span>
+              {description}
+            </p>
+            <button
+              type="button"
+              className="cancel-reserve"
+              onClick={() => cancelReservedRockect(id)}
+            >
+              Cancel Reservation
+            </button>
+          </>
         )}
       </div>
     </div>

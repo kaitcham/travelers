@@ -94,6 +94,15 @@ nav {
   font-size: 20px;
 }
 
+.rocket-desc p span {
+  color: white;
+  font-size: 14px;
+  padding: 2px 3px;
+  margin-right: 5px;
+  border-radius: 4px;
+  background-color: rgb(140, 140, 250);
+}
+
 .reserve {
   background-color: rgb(140, 140, 250);
   border-radius: 2px;
