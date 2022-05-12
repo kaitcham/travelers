@@ -4,6 +4,12 @@
   padding: 0;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
 header {
   padding: 12px 25px;
   background-color: rgb(220, 250, 250);
@@ -59,8 +65,8 @@ nav {
 /* Rockets Page */
 
 .rockets {
-  position: absolute;
-  padding: 0 25px;
+  flex: 1;
+  padding: 0 50px;
 }
 
 .rocket {
