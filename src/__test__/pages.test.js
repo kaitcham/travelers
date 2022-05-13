@@ -11,7 +11,7 @@ describe('Testing if all pages renders correctly', () => {
     const tree = render(
       <Provider store={store}>
         <RocketsPage />
-      </Provider>
+      </Provider>,
     );
     expect(tree).toMatchSnapshot();
   });
@@ -19,7 +19,7 @@ describe('Testing if all pages renders correctly', () => {
     const tree = render(
       <Provider store={store}>
         <MissionsPage />
-      </Provider>
+      </Provider>,
     );
     expect(tree).toMatchSnapshot();
   });
@@ -27,7 +27,7 @@ describe('Testing if all pages renders correctly', () => {
     const tree = render(
       <Provider store={store}>
         <ProfilePage />
-      </Provider>
+      </Provider>,
     );
     expect(tree).toMatchSnapshot();
   });
