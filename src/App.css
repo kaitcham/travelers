@@ -1,38 +1,236 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#root {
   display: flex;
   flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  padding: 12px 25px;
+  background-color: rgb(220, 250, 250);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+
+.logo h1 {
+  font-size: 32px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+.navbar li:not(:last-child) {
+  margin-right: 10px;
+}
+
+.navbar li a {
+  padding: 5px;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.link {
+  color: rgb(65, 110, 220);
+}
+
+.link-active {
+  color: orangered;
+  border-bottom: 2px solid orangered;
+}
+
+/* Rockets Page */
+
+.rockets {
+  flex: 1;
+  padding: 0 50px;
+}
+
+.rocket {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 15px;
+  margin-bottom: 15px;
+  gap: 1rem;
+}
+
+.rocket-img {
+  height: 200px;
+}
+
+.rocket-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.rocket-desc {
+  grid-column: span 3;
+}
+
+.rocket-desc h2 {
+  font-size: 30px;
+}
+
+.rocket-desc p {
+  margin-top: 0.5rem;
+  font-size: 20px;
+}
+
+.rocket-desc p span {
   color: white;
+  font-size: 14px;
+  padding: 2px 3px;
+  margin-right: 5px;
+  border-radius: 4px;
+  background-color: rgb(140, 140, 250);
 }
 
-.App-link {
-  color: #61dafb;
+.reserve {
+  background-color: rgb(140, 140, 250);
+  border-radius: 2px;
+  margin-top: 0.5rem;
+  padding: 8px 20px;
+  cursor: pointer;
+  color: white;
+  border: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cancel-reserve {
+  background-color: rgb(243, 232, 211);
+  color: black;
+  border: 1px solid rgb(253, 65, 65);
+  border-radius: 3px;
+  margin-top: 0.5rem;
+  padding: 8px 20px;
+  cursor: pointer;
+}
+
+/* Missions Page */
+
+.missions {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 80px;
+}
+
+.mission {
+  flex: 1;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  height: 100%;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid rgb(195, 195, 195);
+  text-align: left;
+  padding: 8px;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #dddbdb;
+}
+
+td {
+  vertical-align: top;
+}
+
+td button {
+  background-color: rgb(243, 243, 250);
+  white-space: nowrap;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+td:nth-child(3) {
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.active-member p {
+  background-color: rgb(140, 140, 250);
+  border-radius: 2px;
+  padding: 8px 20px;
+  cursor: pointer;
+  color: white;
+  border: none;
+}
+
+.not-member p {
+  background-color: rgb(63, 63, 65);
+  border-radius: 2px;
+  padding: 8px 22px;
+  cursor: pointer;
+  color: white;
+  border: none;
+}
+
+.mission-button {
+  vertical-align: middle;
+}
+
+.join-mission button {
+  color: black;
+  padding: 8px 22px;
+  border: 1px solid black;
+}
+
+.leave-mission button {
+  color: rgb(240, 55, 55);
+  padding: 8px 16px;
+  border: 1px solid rgb(240, 55, 55);
+}
+
+/* Profile Page */
+
+.profile {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  padding: 30px 50px;
+}
+
+.empty-profile {
+  color: rgb(240, 55, 55);
+  margin-top: 15px;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.profile-missions,
+.profile-rockets {
+  border: 2px solid rgb(195, 195, 195);
+  margin-top: 15px;
+  padding: 15px;
+  width: 100%;
 }
