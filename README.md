@@ -10,7 +10,7 @@ A web application for a company that provides commercial and scientific space tr
 
 ## Live Demo
 
-[Live Demo Link](https://kaitcham.github.io/Portfolio/)
+[Travelers](https://kaitchamtravelers.herokuapp.com/)
 
 ## Requirements:
 
