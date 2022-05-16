@@ -8,6 +8,10 @@
 
 A web application for a company that provides commercial and scientific space travel services. The application allow users to book rockets and join selected space missions.
 
+## Live Demo
+
+[Live Demo Link](https://kaitcham.github.io/Portfolio/)
+
 ## Requirements:
 
 ### Phase 1, config and basic setup
